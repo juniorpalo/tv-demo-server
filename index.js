@@ -11,6 +11,10 @@ app.use((req, res, next) => {
 })
 
 app.use(bodyParser.json())
+app.use((req, res, next) => {
+    console.log(req.body)
+    next()
+})
 
 const inMemoryDatabase = {
     shows: [
@@ -54,7 +58,7 @@ app.get('/shows', (req, res) => {
 app.post('/shows', (req, res) => {
     const newShow = req.body
     inMemoryDatabase.shows.push(newShow)
-    res.send('Added new show: ' + newShow.name)
+    res.send(newShow)
 })
 
 app.listen('3001', () => console.log('running on 3001'))
