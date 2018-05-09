@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/juniorpalo/tv-demo-server#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "monk": "^6.0.5"
   }
 }
